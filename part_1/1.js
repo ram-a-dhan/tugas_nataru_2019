@@ -30,9 +30,9 @@ function firstArrived(cars) {
   var colors = ['kuning','merah','hitam'];
   var arrival = [];
   // code below here
-  for (i = 0; i < colors.length; i++) {
-    for (j = 0; j < cars.length; j++) {
-      if (cars[j][1] === colors[i]) {
+  for (i = 0; i < colors.length; i++) { // looping for each color (yellow, red, black. in this particular order)
+    for (j = 0; j < cars.length; j++) { // looping for checking each car
+      if (cars[j][1] === colors[i]) { // if a car has the coresponding color, its number get pushed to new array
         arrival.push(cars[j][0]);
       }
     }
