@@ -18,10 +18,10 @@ console.log(getCoordinates(array))
 */
 function getCoordinates(arr) {
   let coord = [];
-  for (let i = 1; i < arr.length; i++) {
-    for (let j = 1; j < arr[i].length; j++) {
+  for (let i = 1; i < arr.length; i++) { // looping for the 1st dimension
+    for (let j = 1; j < arr[i].length; j++) { // looping for the 2nd dimension
       if (arr[i][j] === 'x') {
-        coord.push(arr[0][j] + arr[i][0]);
+        coord.push(arr[0][j] + arr[i][0]); // if X is found, manually concatenate the 1st & 2nd dimension labels where X is found
       }
     }
   }
