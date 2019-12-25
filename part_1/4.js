@@ -17,8 +17,18 @@ console.log(getCoordinates(array))
 // ["B1", "A3"]
 */
 function getCoordinates(arr) {
-  // code below here
+  let coord = [];
+  for (let i = 1; i < arr.length; i++) {
+    for (let j = 1; j < arr[i].length; j++) {
+      if (arr[i][j] === 'x') {
+        coord.push(arr[0][j] + arr[i][0]);
+      }
+    }
+  }
+  return coord;
 }
+
+console.log('');
 
 var array = [
   [" ", "A", "B", "C", "D"],
@@ -27,8 +37,13 @@ var array = [
   ["3", " ", " ", " ", "x"],
   ["4", " ", " ", "x", " "],
 ]
-console.log(getCoordinates(array))
+console.log('Map 1:');
+console.log(array);
+console.log('Coordinates:');
+console.log(getCoordinates(array));
 // [ 'C1', 'B2', 'D3', 'C4' ]
+
+console.log('');
 
 var array2 = [
   [" ", "A", "B", "C"],
@@ -36,5 +51,10 @@ var array2 = [
   ["2", " ", "x", " "],
   ["3", "x", " ", "x"],
 ]
-console.log(getCoordinates(array2))
+console.log('Map 2:');
+console.log(array2);
+console.log('Coordinates:');
+console.log(getCoordinates(array2));
 // [ 'A1', 'C1', 'B2', 'A3', 'C3' ]
+
+console.log('');
