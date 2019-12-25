@@ -11,18 +11,21 @@
 */
 function palindromeChanger(numbers) {
   
-  let arrNum = [], len, wtf = [];
+  let digits = [], len, wtf = [];
   
   for (let i = 0; i < numbers.length; i++) { // loop for each number
     do {
-      arrNum = numbers[i].toString().split(''); // compart number into digits in an array
-      len = Math.floor(arrNum.length / 2); // half-length of number digits
+
+      // arrNum = numbers[i].toString().split(''); // compart number into digits in an array
+      // len = Math.floor(arrNum.length / 2); // half-length of number digits
+      digits = '' + numbers[i];
+      len = digits.length / 2; // half-length of number digits
       wtf = []; // Whether True or False
-      // console.log(arrNum);
+      // console.log(digits);
       // console.log(len);
       
       for (let j = 0; j < len; j++) { // loop to check palindromity
-        if (arrNum[j] === arrNum[arrNum.length-1-j]) {
+        if (digits[j] === digits[digits.length-1-j]) {
           wtf.push(true); // if 1 segment has palindrome characteristic, add TRUE to WTF checklist
         } else {
           wtf.push(false); // vice versa
@@ -51,10 +54,9 @@ console.log(palindromeChanger(isItPal));
 console.log('');
 
 //// CUSTOM TEST CASE
-// var isItPal = [1119, 404309, 2020];
+// var isItPal = [157921, 42609, 3429000, 101100000];
 // console.log('Before:');
 // console.log(isItPal);
 // console.log('After:');
 // console.log(palindromeChanger(isItPal));
-// // [ 1221, 404404, 2112 ]
 // console.log('');
