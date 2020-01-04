@@ -55,23 +55,23 @@ function partialCheck(str, partial) {
   for (x = 0; x < str.length; x++) {
     cc = str.charCodeAt(x);
     if (cc >= 65 && cc <= 90) {
-      str2 += String.fromCharCode(cc + 32);
+      str2 += String.fromCharCode(cc + 32); // if any uppercase letter is found, change it into lowercase
     } else {
-      str2 += str[x];
+      str2 += str[x]; // moving string characters from str to str2 because str[x] = String.fromCharCode(cc + 32); is not possible
     }
   }
-  str = str2;
+  str = str2; // reassign the parameter with all-lowercase string characters
   // console.log(str);
   
   let count = 0;
   for (i = 0; i < str.length-2; i++) {
     if (str[i] === partial[0] && str[i+1] === partial[1] && str[i+2] === partial[2]) {
-      count++;
+      count++; // counter variable for counting how many partial pattern exists in str
     }
   }
 
   if (count > 1) {
-    return `...Found ${count} times!`
+    return `...Found ${count} times!`;
   } else if (count === 1) {
     return '...Found 1 time!';
   } else {
