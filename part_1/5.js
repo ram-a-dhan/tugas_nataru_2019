@@ -29,9 +29,9 @@ function palindromeChanger(numbers) {
   
     let digits, halfLength, isNotPal;
     for (let i = 0; i < numbers.length; i++) { // loop for each number
+      digits = '' + numbers[i]; // convert number into string
+      halfLength = digits.length / 2; // half-length of digits string
       do {
-        digits = '' + numbers[i]; // convert number into string
-        halfLength = digits.length / 2; // half-length of digits string
         isNotPal = 0; // Non-Palindrome Indicator initial set / reset
 
         for (let j = 0; j < halfLength; j++) { // looping whole digits string to check palindromity
